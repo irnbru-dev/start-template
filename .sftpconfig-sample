@@ -1,0 +1,9 @@
+{
+  "connect": {
+    "host": "",
+    "port": "22",
+    "username": "",
+    "password": ""
+  },
+  "path": ""
+}

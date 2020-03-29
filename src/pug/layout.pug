@@ -1,0 +1,11 @@
+include _blocks-connect
+
+doctype html
+html(lang='ru')
+    block head
+        include inc/_head
+    body
+        main
+            +header()
+            block content
+            +footer()
