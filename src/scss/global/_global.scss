@@ -21,16 +21,15 @@ svg {
 
 a {
   text-decoration: none;
-}
 
-@media (hover: hover) {
-
-  a:hover {
-    cursor: pointer;
-  }
-
-  button:hover {
+  @include hover {
     cursor: pointer;
   }
 }
 
+button {
+
+  @include hover {
+    cursor: pointer;
+  }
+}

@@ -1,10 +1,10 @@
 //MEDIA
-$view-mobile: "min-width: 576px";
-$view-tablet: "min-width: 768px";
-$view-desktop: "min-width: 992px";
-$view-large: "min-width: 1200px";
-$view-huge: "min-width: 1600px";
-$view-enormous: "min-width: 1800px";
+$v-xs: 576px;
+$v-sm: 768px;
+$v-md: 992px;
+$v-lg: 1200px;
+$v-xl: 1400px;
+$v-xxl: 1600px;
 
 //COLORS
 $c-white: #fff;
@@ -13,9 +13,4 @@ $c-black: #000;
 //FONTS
 
 //TRANSITION
-$tr: .3s ease-in-out;
-
-
-//TODO refactor and implement everywhere
-//HOVER
-$hover: "(hover:hover)";
+$t-def: .3s ease-in-out;

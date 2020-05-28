@@ -7,14 +7,20 @@
   letter-spacing: $lc;
 }
 
+@mixin flex($fd: null, $fw: null, $ai: center, $jc: flex-start) {
+  display: flex;
+  flex-direction: $fd;
+  flex-wrap: $fw;
+  align-items: $ai;
+  justify-content: $jc;
+}
+
 @mixin position($position, $t: null, $r: null, $b: null, $l: null) {
   position: $position;
   top: $t;
   right: $r;
   bottom: $b;
   left: $l;
-  content: "";
-  display: inline-block;
 }
 
 @mixin absolute($args...) {
@@ -29,6 +35,70 @@
   @include position(fixed, $args...);
 }
 
+@mixin media-xs {
+  @media (min-width: #{$v-xs}) {
+    @content;
+  }
+}
+
+@mixin media-sm {
+  @media (min-width: #{$v-sm}) {
+    @content;
+  }
+}
+
+@mixin media-md {
+  @media (min-width: #{$v-md}) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: #{$v-lg}) {
+    @content;
+  }
+}
+
+@mixin media-xl {
+  @media (min-width: #{$v-xl}) {
+    @content;
+  }
+}
+
+@mixin media-xxl {
+  @media (min-width: #{$v-xxl}) {
+    @content;
+  }
+}
+
+@mixin media($size) {
+  @media (min-width: $size+'px') {
+    @content;
+  }
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+
+  // IE 10-11 doesn't support @media hover
+  @include ie-support {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// This hack detects IE 10-11 and provide styles used only in IE.
+@mixin ie-support {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    @content;
+  }
+}
+
 @mixin visible {
   opacity: 1;
   visibility: visible;
@@ -37,7 +107,7 @@
 @mixin invisible() {
   opacity: 0;
   visibility: hidden;
-  transition: opacity $tr;
+  transition: opacity $t-def;
 }
 
 @mixin svg-fill($color) {
@@ -51,6 +121,6 @@
 
   svg {
     stroke: $color;
-    transition: stroke 0.3s;
+    transition: stroke $t-def;
   }
 }

@@ -61,21 +61,21 @@
 
   &-md {
 
-    @media ($view-tablet) {
+    @include media-md {
       @include grid-mixin();
     }
   }
 
   &-lg {
 
-    @media ($view-desktop) {
+    @include media-lg {
       @include grid-mixin();
     }
   }
 
   &-xl {
 
-    @media ($view-large) {
+    @include media-xl {
       @include grid-mixin();
     }
   }
